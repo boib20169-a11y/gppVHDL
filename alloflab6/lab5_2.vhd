@@ -1,0 +1,135 @@
+library ieee; 
+use ieee.std_logic_1164.all;
+entity lab5_2 is 
+	port
+	(
+		clk		: in	std_logic;
+		data_in	: in	std_logic;
+		reset		: in	std_logic;
+		student_id : out std_logic_vector(3
+		downto 0);
+		current_state: out	std_logic_vector(3 downto 0)
+		);
+end lab5_2;
+ARCHITECTURE Behavior OF lab5_2 IS
+	--Build an enumerated type with 9 states for the state machine (
+	--9 states for parsing 9 digits of student id)
+	type state_type is (s0, s1, s2, s3, s4, s5, s6, s7, s8);
+	--Register to hold the current state
+	signal yfsm : state_type;
+begin
+	process(clk, reset)
+	begin
+	if reset = '1' then
+	yfsm <=s0;
+	elsif(clk'EVENT AND clk = '1') then
+	-- Determine the next state 
+	--synchronously, based on 
+	-- the current state and the input
+		CASE yfsm IS       
+			WHEN s0=>
+				IF data_in = '0' THEN
+				yfsm <=s0;
+				current_state<="0000";
+				ELSE
+				yfsm <=s1;
+				current_state<="0001";
+				END IF ;
+			WHEN s1=>
+				IF data_in = '0' THEN
+				yfsm <=s1;
+				current_state<="0001";
+				ELSE
+				yfsm <=s2;
+				current_state<="0010";
+				END IF ;
+			WHEN s2=>
+				IF data_in = '0' THEN
+				yfsm <=s2;
+				current_state<="0010";
+				ELSE
+				yfsm <=s3;
+				current_state<="0011";
+				END IF ;
+			WHEN s3=>
+				IF data_in = '0' THEN
+				yfsm <=s3;
+				current_state<="0011";
+				ELSE
+				yfsm <=s4;
+				current_state<="0100";
+				END IF ;
+			WHEN s4=>
+				IF data_in = '0' THEN
+				yfsm <=s4;
+				current_state<="0100";
+				ELSE
+				yfsm <=s5;
+				current_state<="0101";
+				END IF ;
+			WHEN s5=>
+				IF data_in = '0' THEN
+				yfsm <=s5;
+				current_state<="0101";
+				ELSE
+				yfsm <=s6;
+				current_state<="0110";
+				END IF ;
+			WHEN s6=>
+				IF data_in = '0' THEN
+				yfsm <=s6;
+				current_state<="0110";
+				ELSE
+				yfsm <=s7;
+				current_state<="0111";
+				END IF ;
+			WHEN s7=>
+			
+				IF data_in = '0' THEN
+				yfsm <=s7;
+				current_state<="0111";
+				ELSE
+				yfsm <=s8;
+				current_state<="1000";
+				END IF ;
+			WHEN s8=>
+		
+			IF data_in = '0' THEN
+				yfsm <=s8;
+				current_state<="1000";
+				ELSE
+				yfsm <=s0;
+				current_state<="0000";
+				END IF ;
+			END CASE;
+		END IF;
+	END PROCESS;
+	--Implement the Moore or Mealy logic here
+	process(yfsm) -- data_in if reqd only
+	begin
+		CASE yfsm is
+		WHEN s0=>
+			student_id<= "0101";
+		WHEN s1=>
+			student_id<="0000";
+		WHEN s2=>
+			student_id<= "0001";
+		WHEN s3=>
+			student_id<="0010";
+		WHEN s4=>
+			student_id<= "1001";
+		WHEN s5=>
+			student_id<= "0100";
+		WHEN s6=>
+			student_id<= "0010";
+		WHEN s7=>
+			student_id<= "0101";
+		WHEN s8=>
+			student_id<= "0001";
+			
+		END CASE; 
+	
+		END PROCESS;
+		END Behavior ;
+
+	

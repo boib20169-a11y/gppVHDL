@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\adf\Desktop\COE_328_Quartus\lab6\part4_alucore\simulation\qsim
+valutest
+Z1 !s100 jh7ocdaEB?On2AF^Sc>a82
+Z2 I0;W^nN90PMbAPXcIcL9023
+Z3 Vzm8f;<gQJHR_kJ[bAD_MY3
+Z4 dC:\Users\adf\Desktop\COE_328_Quartus\lab6\part4_alucore\simulation\qsim
+Z5 w1764072150
+Z6 8ALU.vo
+Z7 FALU.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|ALU.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1764072151.628000
+Z12 !s107 ALU.vo|
+!s101 -O0
+valutest_vlg_check_tst
+!i10b 1
+Z13 !s100 7_CY<bGPh6_8[?GAGGjaK1
+Z14 I]0mE1A2<Y94=W2[5ZEC2I0
+Z15 VCY8KCLQF__4?3eZBnO6jb2
+R4
+R5
+Z16 8ALU.vt
+Z17 FALU.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z18 !s108 1764072151.746000
+Z19 !s107 ALU.vt|
+Z20 !s90 -work|work|ALU.vt|
+!s101 -O0
+R10
+valutest_vlg_sample_tst
+!i10b 1
+Z21 !s100 IeSgO]ZE`dMz:a>fhXJHj2
+Z22 IEGRNTY[W8TFS50j<``1`R3
+Z23 V6e>DK]GQXTm]Y:;gSQZh:3
+R4
+R5
+R16
+R17
+L0 29
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10
+valutest_vlg_vec_tst
+!i10b 1
+!s100 UH0Z[eTH8WIKL=ak:2bZ;2
+ITTEXKWBmbX5K933E:e=o33
+Z24 V9Zm]mcRiA9@8XDnb6M8dM3
+R4
+R5
+R16
+R17
+Z25 L0 318
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10
